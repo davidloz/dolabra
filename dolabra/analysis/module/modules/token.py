@@ -9,7 +9,7 @@ from dolabra.analysis.module.modules.taints import PushFourTaint
 log = logging.getLogger(__name__)
 
 class Token(BaseModule):
-    pattern_name = "Token"
+    pattern_name = "TOKEN"
 
     pre_hooks = ['JUMPDEST']
     post_hooks = ['PUSH4'] 

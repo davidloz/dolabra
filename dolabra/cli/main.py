@@ -16,7 +16,7 @@ from dolabra.benchmark import benchmark_state_path
 DEFAULT_MAX_DEPTH = 128
 DEFAULT_RPC = 'http://127.0.0.1:8545'
 DEFAULT_SOLC = 'solc'
-DEFAULT_TIMEOUT_ANALYSIS = 60
+DEFAULT_TIMEOUT_ANALYSIS = 240
 
 # Default benchmark arguments
 DEFAULT_DELIMITER = ','

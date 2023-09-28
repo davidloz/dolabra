@@ -30,8 +30,8 @@ setup_logger()
 log = logging.getLogger(__name__)
 
 class SymbolicWrapper:
-    white_list=["Getter", "Setter"]
-    #white_list=["StorageCallerCheck"]
+    #white_list=["Getter", "Setter"]
+    white_list=["Token"]
     
     def __init__(self, contract, module_loader: Optional[ModuleLoader] = ModuleLoader()):
         self.contract = contract
@@ -45,7 +45,7 @@ class SymbolicWrapper:
         dyn_loader = None
 
         if contract is not None:
-            if isinstance(contract, BinaryLoader):
+            if isinstance(contract, FileLoader):
                 bytecode = contract.contract().creation_disassembly.bytecode
             elif isinstance(contract, RuntimeLoader):
                 contract_address = "0"
