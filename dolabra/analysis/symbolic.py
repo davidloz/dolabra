@@ -30,8 +30,7 @@ setup_logger()
 log = logging.getLogger(__name__)
 
 class SymbolicWrapper:
-    #white_list=["Getter", "Setter"]
-    white_list=["Token"]
+    white_list=["Getter"]
     
     def __init__(self, contract, module_loader: Optional[ModuleLoader] = ModuleLoader()):
         self.contract = contract
@@ -131,7 +130,6 @@ class SymbolicWrapper:
         log.info(
             'Symbolic execution finished in %.2f seconds.',
             time.time() - start_time)
-        #return start_time, time.time()
 
         report = []
         for module in self.module_loader.get_detection_modules(self.white_list):
@@ -160,7 +158,5 @@ class SymbolicWrapper:
             creation_code=bytecode,
             target_address=contract_address,
             world_state=world_state)
-
-        # report = Report(start_time=start_time, end_time=end_time)
 
         return report
