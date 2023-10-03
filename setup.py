@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import pathlib
 
-VERSION = '0.1'
+VERSION = '1.0'
 CURRENT_DIR = pathlib.Path(__file__).parent
 README = (CURRENT_DIR / 'README.md').read_text()
 PYTHON_REQUIREMENT = '>=3.7.0'
@@ -10,6 +10,8 @@ REQUIREMENTS = [
     "Jinja2==2.11.2",
     "mythril==0.23.17",
     "colorama==0.4.3",
+    "pypandoc==1.5",
+    "py-solc==3.2.0"
 ]
 
 setup(
@@ -20,7 +22,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/davidloz/dolabra',
     author='David Loz',
-    author_email='lozdav3@gmail.com',
+    author_email='nicetry@gmail.com',
     license='MIT',
     classifiers=[
         'License :: OSI Approved :: MIT License',

@@ -9,7 +9,7 @@ from dolabra.analysis.module.modules.taints import CallValueTaint
 log = logging.getLogger(__name__)
 
 class Payable(BaseModule):
-    pattern_name = "Payable"
+    pattern_name = "PAYABLE"
 
     pre_hooks = ['JUMPI', 'RETURN', 'STOP', 'REVERT', 'INVALID']
     post_hooks = ['CALLVALUE']

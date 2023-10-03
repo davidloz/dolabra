@@ -7,7 +7,7 @@ from dolabra.contract_loaders.file_loader import FileLoader
 
 log = logging.getLogger(__name__)
 
-class BinaryLoader(FileLoader):
+class RuntimeLoader(FileLoader):
     def __init__(self, path: Text) -> None:
         super().__init__(path)
 
@@ -18,8 +18,7 @@ class BinaryLoader(FileLoader):
         except IOError as e:
             log.error('Failed to open contract binary file: %s', e)
             raise IOError('Failed to open contract binary file')
-        #return EVMContract(code=bytecode)
-        return EVMContract(creation_code=bytecode)
+        return EVMContract(code=bytecode)
 
     @classmethod
     def create(cls, **options):

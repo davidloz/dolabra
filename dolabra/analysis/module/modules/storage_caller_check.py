@@ -1,5 +1,4 @@
 import logging
-import traceback
 from typing import Optional
 from mythril.laser.ethereum.state.global_state import GlobalState
 from mythril.laser.smt.bitvec import BitVec
@@ -19,9 +18,7 @@ log = logging.getLogger(__name__)
 essential_operations = ['SSTORE', 'CALL', 'CALLCODE', 'DELEGATECALL', 'STATICCALL']
 
 class StorageCallerCheck(BaseModule):
-    pattern_name = "StorageCallerCheck"
-    jumpdest_counter = 0
-    #description = "Detects when a contract checks if a tainted input is equal to a stored address before execution."
+    pattern_name = "STORAGE_CALLER_CHECK"
 
     pre_hooks = ['JUMPI']
     post_hooks = ['CALLER', 'SLOAD', 'PUSH4', 'EQ', 'PUSH2'] + essential_operations
