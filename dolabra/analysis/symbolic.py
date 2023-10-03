@@ -30,7 +30,7 @@ setup_logger()
 log = logging.getLogger(__name__)
 
 class SymbolicWrapper:
-    white_list=["Getter"]
+    white_list=[]
     
     def __init__(self, contract, module_loader: Optional[ModuleLoader] = ModuleLoader()):
         self.contract = contract

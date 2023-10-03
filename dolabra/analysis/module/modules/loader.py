@@ -59,7 +59,6 @@ class ModuleLoader(object, metaclass=Singleton):
     def _register_modules(self):
         self._modules.extend(
             [
-                Payable(),
                 StorageCallerCheck(),
                 Getter(),
                 Setter(),

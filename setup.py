@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import pathlib
 
-VERSION = '0.1'
+VERSION = '1.0'
 CURRENT_DIR = pathlib.Path(__file__).parent
 README = (CURRENT_DIR / 'README.md').read_text()
 PYTHON_REQUIREMENT = '>=3.7.0'
@@ -22,7 +22,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/davidloz/dolabra',
     author='David Loz',
-    author_email='lozdav3@gmail.com',
+    author_email='nicetry@gmail.com',
     license='MIT',
     classifiers=[
         'License :: OSI Approved :: MIT License',
